@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>computer hardware website: gallery </title>
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+     <div id="main">
+         <div id="header">
+            <h1>gallery</h1>
+
+         <div id="social"> 
+            <a href="https://www.facebook.com">
+                <img src="images/facebook.jpg" alt="facebook">
+            </a>
+            <a href="https://www.x.com">
+                <img src="images/Twitter.png" alt="x/twitter">
+            </a>
+            <a href="https://www.linkedin.com">
+                <img src="images/1200px-Linkedin.svg-624x624.png" alt="linkedin">
+            </a>
+         </div>
+         </div>
+
+         <div id="nav">
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="motherboard.html">healthy eating</a></li>
+                <li><a href="cpu.html">sleeping habits</a></li>
+                <li><a href="gpu.html">exercise</a></li>
+                <li><a href="ram.html">other topics</a></li>
+                <li><a class="active" href="gallery.html">gallery</a></li> 
+                <li><a href="news.html">news</a></li>               
+                <li><a href="contact.html">contact us</a></li>
+            </ul>
+            </div>
+
+        <h2>gallery</h2>
+
+        <div id="content" display: block>
+            <img class="myslides" src="images/healthy.jfif"  style="width: 100%;">
+            <img class="myslides" src="images/healthy1.jfif" style="width: 100%;">
+            <img class="myslides" src="images/healthy2.jfif" style="width: 100%;">
+            <img class="myslides" src="images/healthy3.jfif" style="width: 90%;">
+            <img class="myslides" src="images/healthy4.jfif" style="width: 100%;">
+            <img class="myslides" src="images/healthy5.jfif" style="width: 100%;">
+            <img class="myslides" src="images/healthy6.jfif" style="width: 100%;">
+            <img class="myslides" src="images/healthy7.jfif" style="width: 100%;">
+            <div class="leftbutton" onclick="plusDivs(-1)">
+                <img src="images/LeftArrow.png" alt="left arrow"></div>
+            </div>
+
+
+            <script>
+    
+               var slideindex = 1; // creating a variable called slide index
+               showDivs(slideindex); //calling the show divs function with the slide index in it
+               
+               //this is the plus divs function
+               function plusDivs(n) {
+                showDivs(slideindex += n) ;
+               }
+    
+               //this is the current div function
+               function currentDiv(n) {
+                showDivs(slideindex = n) ;
+               }
+               //this is the show divs functions
+               function showDivs(n) {
+    
+                var i; //local variable called i
+    
+                var x = document.getElementsByClassName("myslides");
+                // this is the variable called x
+                // in this variable we will hold the my slides  div
+                //we are identifying the div using the class element
+    
+                if (n > x.length) {slideindex = 1}
+                // if we have gone through all of the images then we reset back to the first one.
+    
+                if (n <1) {slideindex = x.length}
+                //if we have gone below the number of images we have then we reset back to the first one.
+    
+                //below is the for loop which will go through x and show only the one present
+                //it will hide the rest of the images from view.
+                for (i = 0; i <x.length; i++)
+                {
+    
+                x[i].style.display = "none"; //we are changing the display style to none
+                // this will make it invisible from the screen
+    
+                }
+    
+                x[slideindex-1].style.display = "block";
+                // this will show only 1 image
+               }
+               </script>
+         </div> 
+
+         <div id="footer">
+            <a href="index.html">home</a>  |  <a href="motherboard.html">healthy eating</a>  |  <a href="cpu.html">sleeping habits</a>  |  <a href="gpu.html">exersise</a>  |  <a href="ram.html">other topics</a>  |  <a href="gallery.html">gallery</a>  |  <a href="news.html">News</a>  |  <a href="contact.html">contact us</a>
+         </div>
+         
+    </body>
+</html>
